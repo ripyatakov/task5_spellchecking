@@ -118,8 +118,6 @@ void lower(string& s) {
 }
 
 string stripPunct(const string& s) {
-
-
 //	 Remove any single trailing
 //	 punctuation character from a word.
 	if (ispunct(s[s.length() - 1]) )
@@ -130,10 +128,8 @@ string stripPunct(const string& s) {
     {
 		return s;
 	}
-//if (s[s.length() - 2] == '.' || s[s.length() - 2] == ',' || s[s.length() - 2] == '?' || s[s.length() - 2] == '!'){
-//    return s.substr (0, s.length() - 2);
 }
-
+//меняет местами соседние буквы pos  и pos + 1
 string transposing(const string& s, const int pos){
     string answ;
     answ = s;
@@ -142,14 +138,17 @@ string transposing(const string& s, const int pos){
     answ[pos+1] = hlp;
     return answ;
 }
+//удаляет символ
 string removal(const string& s, const int pos){
     return s.substr(0,pos) + s.substr(pos+1, s.length() - pos - 1);
 }
+//заменяет символ
 string replacement(const string& s, const int pos, const char c){
     string answ = s;
     answ[pos] = c;
     return answ;
 }
+//вставляет символ после
 string insertAfter(const string& s, const int pos, const char c){
     if (pos == -1)
         return c + s;
