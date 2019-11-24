@@ -19,9 +19,15 @@ public:
 
     unsigned int operator()( const string& s )  const {
         
-        
-        // Complete definition
-        
+        unsigned int max = -1;
+        unsigned int res = 0;
+        unsigned int p = 1;
+        for (int i = s.length()-1; i >= 0; --i) {
+            res += (s[0] - 'a')*p % max;
+            p = p * 26 % max;
+        }
+        return res;
+
     }
 };
 
